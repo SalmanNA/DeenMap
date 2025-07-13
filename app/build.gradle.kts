@@ -36,6 +36,14 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    namespace = "com.example.deenmap"
+    compileSdk = 36
+
+    configurations.all {
+        resolutionStrategy {
+            force("androidx.lifecycle:lifecycle-common:2.6.2")
+        }
+    }
 }
 
 dependencies {
@@ -48,6 +56,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
